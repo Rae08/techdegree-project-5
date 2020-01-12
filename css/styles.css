@@ -209,10 +209,6 @@ header h1 {
     outline: none;
   }
 
-  .modal-btn-container .btn:disabled {
-    display: none;
-    
-  }
   
 
 /* ===================================== 

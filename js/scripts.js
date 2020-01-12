@@ -87,38 +87,55 @@ function openModal(data, index) {
   const nextButton = document.querySelector('#modal-next');
   nextButton.addEventListener('click', function () {
     let nextIndex = parseInt(info) + 1;
-    if (nextIndex + 1 < data.length) {
-      info = generateInfo(data[nextIndex], nextIndex);
+    if (parseInt(info) === data.length - 1) {
+      nextButton.disabled = true;
       if (prevButton.disabled) {
         prevButton.disabled = false;
       }
     } else {
-      nextButton.disabled = true;
-      info = generateInfo(data[nextIndex], nextIndex);
-      if (prevButton.disabled) {
-        prevButton.disabled = false;
+      if (nextIndex + 1 < data.length) {
+        info = generateInfo(data[nextIndex], nextIndex);
+        if (prevButton.disabled) {
+          prevButton.disabled = false;
+        }
+      } else {
+        nextButton.disabled = true;
+        info = generateInfo(data[nextIndex], nextIndex);
+        if (prevButton.disabled) {
+          prevButton.disabled = false;
+        }
       }
     }
+
   })
 
   // event listener for the prev button
   // if the prev button is clicked, it populates the information for the prev employee in the data set;
   // if the first employee is shown, the prev button is disabled so that it cannot be clicked
   const prevButton = document.querySelector('#modal-prev');
+
   prevButton.addEventListener('click', function () {
     let prevIndex = parseInt(info) - 1;
-    if (prevIndex - 1 > 0) {
-      info = generateInfo(data[prevIndex], prevIndex);
-      if (nextButton.disabled) {
-        nextButton.disabled = false;
-      }
-    } else {
+    if (parseInt(info) === 0) {
       prevButton.disabled = true;
-      info = generateInfo(data[prevIndex], prevIndex);
       if (nextButton.disabled) {
         nextButton.disabled = false;
       }
 
+    } else {
+      if (prevIndex >= 1) {
+        info = generateInfo(data[prevIndex], prevIndex);
+        if (nextButton.disabled) {
+          nextButton.disabled = false;
+        }
+      } else {
+        prevButton.disabled = true;
+        info = generateInfo(data[prevIndex], prevIndex);
+        if (nextButton.disabled) {
+          nextButton.disabled = false;
+        }
+
+      }
     }
   })
 
