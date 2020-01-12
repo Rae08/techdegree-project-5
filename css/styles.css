@@ -30,7 +30,7 @@ header {
 
 header h1 {
     font-size: 1.25em;
-    color: rgba(50, 50, 50, 0.9);
+    color:darkslateblue;
     margin-top: 35px;
 }
 
@@ -106,6 +106,7 @@ header h1 {
 
 .card-name {
     margin: 20px auto 0;
+    color:darkslateblue;
 }
 
 .card-text {
@@ -151,11 +152,11 @@ header h1 {
     top: 15px;
     right: 15px;
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.9);
-    background: rgba(0, 0, 0, 0.8);
+    color: darkslateblue;
+    background: rgba(255, 255, 255, 1);
     outline: none;
     border-radius: 0.25em;
-    border: 1px solid rgba(50, 50, 50, 0.3);
+    border: 1px solid darkslateblue;
 }
 
 .modal-img {
@@ -166,6 +167,7 @@ header h1 {
 
 .modal-name {
     margin-bottom: 5px;
+    color: darkslateblue;
 }
 
 .modal-text {
@@ -201,10 +203,15 @@ header h1 {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
     padding: 0.75em 1.5em;
-    background: rgba(0, 0, 0, 0.8);
+    background: darkslateblue;
     border-radius: 0.35em;
     transition: .4s ease-out;
     outline: none;
+  }
+
+  .modal-btn-container .btn:disabled {
+    display: none;
+    
   }
   
 
